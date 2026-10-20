@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404: Reaction failed · Jierui</title>
+  <meta name="description" content="Page not found.">
+  <script>
+    /* GitHub Pages shows this file at whatever broken URL was requested (even nested ones),
+       so point relative links back at the site root.
+       "/" for a username.github.io repo, "/<repo-name>/" for a project site.  [EDIT] */
+    (function () {
+      var SITE_BASE = "/MyWebsite/";
+      if (/\.github\.io$/.test(location.hostname)) {
+        var b = document.createElement("base");
+        b.href = SITE_BASE;
+        document.head.appendChild(b);
+      }
+    })();
+  </script>
+  <script>
+    /* Set theme + "js" flag before first paint so there's no flash. */
+    (function () {
+      var d = document.documentElement, t;
+      d.classList.add("js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      d.dataset.theme = t;
+    })();
+  </script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="notfound">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <noscript><p class="wrap" style="padding-top:40px">This site builds its pages with JavaScript (it's a code kid's site, of course there's a script). Please turn it on to see the content.</p></noscript>
+    <section class="wrap lost">
+      <svg class="sad-beaker" viewBox="0 0 160 180" role="img" aria-label="A sad, cracked flask with a frown">
+        <path class="liquid" d="M36.8 130H123.2L132 150a10 10 0 0 1-9 14H37a10 10 0 0 1-9-14Z"/>
+        <path d="M58 20h44M66 20v44L28 150a10 10 0 0 0 9 14h86a10 10 0 0 0 9-14L94 64V20" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="68" cy="104" r="3.5" fill="currentColor"/>
+        <circle cx="92" cy="104" r="3.5" fill="currentColor"/>
+        <path d="M68 122q12-9 24 0" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M63 111q-3 5 0 7q3-2 0-7z" fill="currentColor" opacity=".55"/>
+        <path class="crack" d="M104 82l6 7-5 5 7 9" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="86" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2" opacity=".5"/>
+        <circle cx="74" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="2" opacity=".35"/>
+      </svg>
+      <p class="prompt"><span class="prompt-path">~/lab</span> $ ./run-reaction</p>
+      <h1>Reaction failed: page not found</h1>
+      <div class="error-log">
+        <div><span class="err">ERROR 404</span>: product not formed. Yield: 0%.</div>
+        <div>reactant: <span id="missing-path">this-page</span> (not in the stockroom)</div>
+        <div>likely cause: a typo, a moved page, or a link I broke</div>
+        <div><span class="ok">suggested fix</span>: return to a known stable state ↓</div>
+      </div>
+      <p class="link-row">
+        <a class="btn" href="index.html"><span aria-hidden="true">←</span> Back to the lab</a>
+        <a class="btn btn--ghost" href="projects.html">See what did work</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>
