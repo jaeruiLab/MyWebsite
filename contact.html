@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Jierui</title>
+  <meta name="description" content="Email, LinkedIn, GitHub, or a message straight from this page.">
+  <script>
+    /* Set theme + "js" flag before first paint so there's no flash. */
+    (function () {
+      var d = document.documentElement, t;
+      d.classList.add("js");
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      d.dataset.theme = t;
+    })();
+  </script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <noscript><p class="wrap" style="padding-top:40px">This site builds its pages with JavaScript (it's a code kid's site, of course there's a script). Please turn it on to see the content.</p></noscript>
+    <section class="wrap page-head">
+      <p class="prompt"><span class="prompt-path">~/lab</span> $ ping jierui</p>
+      <h1>Contact</h1>
+      <p class="lede" id="page-lede"></p>
+    </section>
+
+    <section class="wrap contact-grid">
+      <div>
+        <p class="contact-line" id="contact-line"></p>
+        <ul class="contact-links" id="contact-links"></ul>
+      </div>
+
+      <form class="card form" id="contact-form" method="post" enctype="text/plain" action="mailto:">
+        <h2 class="section-title">Send a message</h2>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Your email <span class="hint">(so I can reply)</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" required placeholder="Hypothesis: we should talk about…"></textarea>
+        </div>
+        <p><button class="btn" type="submit">Start the reaction <span aria-hidden="true">→</span></button></p>
+        <p class="form-status" id="form-status" role="status"></p>
+        <p class="kicker" style="text-transform:none;letter-spacing:0">No server, no database: this opens your email app with the message filled in.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>
