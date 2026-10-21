@@ -17,7 +17,7 @@ Colors are CSS variables at the top of `styles.css` (`--accent` re-themes everyt
 
 ## Running
 
-Open `index.html` in a browser. That's it.
+Open `index.html` in a browser.
 
 ## Deploying to GitHub Pages
 
